@@ -21,7 +21,7 @@ function getTheData(startYear, endYear, searchTerm, numberRecords) {
     $.get(queryURL).then(function (blob) {
         for (i = 0; i < numberRecords; i++) {
             if (typeof blob.response.docs[i].multimedia[2] !== 'undefined') {
-                var thumbnail = blob.response.docs[i].multimedia[2].url;
+                var thumbnail = 'https://nytimes.com/' + blob.response.docs[i].multimedia[2].url;
             } else {
                 var thumbnail = "https://picsum.photos/75/75"
             }
@@ -35,6 +35,6 @@ function getTheData(startYear, endYear, searchTerm, numberRecords) {
 };
 
 function createTheHTML(thumbnail, headline, snippet, url) {
-    let theString = "<img src=" + thumbnail + "><div id='headline'>" + headline + "</div><div id='snippet'>" + snippet + "</div><a href='" + url + "'>Full Article</a>";
+    let theString = "<div class='article'><img src=" + thumbnail + "><div id='headline'>" + headline + "</div><div id='snippet'>" + snippet + "</div><a href='" + url + "'>Full Article</a></div>"
     $('#results').append(theString);
 };
