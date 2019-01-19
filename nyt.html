@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYT Search</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <div class="container">
+        <div class='jumbotron'>
+            <h1>New York Times Search</h1>
+            <a href="#">
+                <span class="glyphicon glyphicon-list-alt"></span>
+            </a>
+        </div>
+    </div>
+    <header>Search Parameters</header>
+    <form>
+        <div class="form-group">
+            <label for="searchTerms">Search Terms</label>
+            <textarea class="form-control" id="searchTerms" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="numberRecords">Number of Records to Retrieve</label>
+            <select class="form-control" id="numberRecords">
+                <option>1</option>
+                <option>3</option>
+                <option>5</option>
+                <option>10</option>
+                <option>20</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="startYear">Start Year(Optional)</label>
+            <input type="date" class="form-control" id="startYear" placeholder="1900">
+        </div>
+        <div class="form-group">
+            <label for="endYear">End Year(Optional)</label>
+            <input type="date" class="form-control" id="endYear" placeholder="2019">
+        </div>
+    </form>
+
+</body>
+
+</html>
