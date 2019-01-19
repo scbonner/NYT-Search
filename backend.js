@@ -35,6 +35,6 @@ function getTheData(startYear, endYear, searchTerm, numberRecords) {
 };
 
 function createTheHTML(thumbnail, headline, snippet, url) {
-    let theString = "<img src=" + thumbnail + "><div id='headline'>" + headline + "</div><div id='snippet'>" + snippet + "</div><a href='" + url + "'>Full Article</a>"
+    let theString = "<img src=" + thumbnail + "><div id='headline'>" + headline + "</div><div id='snippet'>" + snippet + "</div><a href='" + url + "'>Full Article</a>";
     $('#results').append(theString);
 };
