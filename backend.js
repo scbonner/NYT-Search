@@ -38,5 +38,3 @@ function createTheHTML(thumbnail, headline, snippet, url) {
     let theString = "<img src=" + thumbnail + "><div id='headline'>" + headline + "</div><div id='snippet'>" + snippet + "</div><a href='" + url + "'>Full Article</a>"
     $('#results').append(theString);
 };
-
-getTheData(2017, 2019, 'pickles', 5);
