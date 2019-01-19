@@ -1,5 +1,6 @@
 
 
+
 .container {
     background-color: teal;
      text-align: center;
@@ -9,3 +10,27 @@
     border: 1px solid black;
     padding: 25px;
 }
+    /* let theString="<div class='article'><img src="+thumbnail+"><div id='headline'>"+headline+"</div><div id='snippet'>"+snippet+"</div><a href='"+url+"'>Full Article</a></div>" $('#results').append(theString); */
+
+    #results {
+        width: 80%;
+        margin-left: 20px;
+    }
+
+    #article {
+        display: block;
+        width: 80%;
+        margin: 20px 0;
+    }
+
+    #thumbnail {}
+
+    #headline {
+        font-size: xx-large;
+        font-weight: bold;
+    }
+
+    #snippet {
+        font-size: medium;
+        font-style: italic;
+    }
