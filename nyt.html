@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NYT Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="backend.js"></script>
+    <link rel="stylesheet" href="nyt.css">
 </head>
 
 <body>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-
     <div class="container">
         <div class='jumbotron'>
             <h1>New York Times Search</h1>
@@ -52,12 +54,8 @@
         <h6>Top Articles</h6>
     </div>
 
-    <div id='results'>
+    <div id='results'></div>
 
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="backend.js"></script>
     <script type="text/javascript">
         var searchTerm;
         var numberRecords;
@@ -73,12 +71,9 @@
             endYear = $('#endYear').val().trim();
             console.log(endYear);
 
-
             getTheData(startYear, endYear, searchTerm, numberRecords);
         });
     </script>
-
-
 </body>
 
 </html>
