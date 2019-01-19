@@ -17,6 +17,7 @@
         let startYear = 2017;
         let endYear = 2019;
         let searchTerm = 'pickles';
+        let numberRecords = 5;
 
         function getTheData() {
             theCurrentYear = new Date().getFullYear();
@@ -34,12 +35,48 @@
                 searchTerm = 'cats';
             }
             queryURL = 'https://cors-anywhere.herokuapp.com/https://api.nytimes.com/svc/search/v2/articlesearch.json?' + startDate + endDate + '&q=' + searchTerm + '&api-key=FYkBfK6ooEHCFI4wDgc9kUVbfj6iZHBE'
+            console.log(queryURL);
 
-            $.get(queryURL).then(function (response) {
-                console.log(response);
+            $.get(queryURL).then(function (blob) {
+                console.log(blob);
+                for (i=0; i<numberRecords; i++) {
+                    console.log("article " + [i]);
+                    if (blob.response.docs[i].multimedia[2] === '') {
+                        var thumbnail = blob.response.docs[i].multimedia[2].url;
+                    } else {
+                        thumbnail = "https://picsum.photos/75/75"
+                    }
+                    // var thumbnail = blob.response.docs[i].multimedia[2].url;
+                    console.log(thumbnail);
+                    var headline = blob.response.docs[i].headline.main;
+                    console.log(headline);
+                    var snippet = blob.response.docs[i].snippet;
+                    console.log(snippet);
+                    var url = blob.response.docs[i].web_url;
+                    console.log(url);
+                }
             });
         };
         getTheData()
+
+
+        // $.ajax({
+        //     url: queryURL,
+        //     method: "GET"
+        // }).then(function(blob) {
+        //     for (i=0; i<numberRecords; i++) {
+        //         // var articleDiv = $("div");
+        //         console.log("article " + [i]);
+        //         var thumbnail = blob.response.docs[i].multimedia[2];
+        //         console.log(thumbnail);
+        //         var headline = blob.response.docs[i].headline.main;
+        //         console.log(headline);
+        //         var snippet = blob.response.docs[i].snippet;
+        //         console.log(snippet);
+        //         var url = blob.response.docs[i].web_url;
+        //         console.log(url);
+        //     }
+        // });
 
 
 
