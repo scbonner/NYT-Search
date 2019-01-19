@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NYTSearch</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        // queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20180101&end_date=20190115&q=Trump&api-key=FYkBfK6ooEHCFI4wDgc9kUVbfj6iZHBE'
+
+        //sample data below
+        let startYear = 2017;
+        let endYear = 2019;
+        let searchTerm = 'pickles';
+
+        function getTheData() {
+            theCurrentYear = new Date().getFullYear();
+            if (startYear != '') {
+                startDate = 'begin_date=' + startYear + '0101'
+            } else {
+                startDate = 'begin_date=17000101'
+            };
+            if (endYear != '') {
+                endDate = '&end_date=' + endYear + '1231'
+            } else {
+                endDate = '&end_date=' + theCurrentYear + '1231'
+            };
+            if (searchTerm == '') {
+                searchTerm = 'cats';
+            }
+            queryURL = 'https://cors-anywhere.herokuapp.com/https://api.nytimes.com/svc/search/v2/articlesearch.json?' + startDate + endDate + '&q=' + searchTerm + '&api-key=FYkBfK6ooEHCFI4wDgc9kUVbfj6iZHBE'
+
+            $.get(queryURL).then(function (response) {
+                console.log(response);
+            });
+        };
+        getTheData()
+
+    </script>
+</body>
+
+</html>
